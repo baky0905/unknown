@@ -21,33 +21,6 @@
     </item>
     
     <item>
-      <title>Project 2</title>
-      <link>/unknown/project/project2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/project/project2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project 3</title>
-      <link>/unknown/project/project3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/project/project3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project 4</title>
-      <link>/unknown/project/project4/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/project/project4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Extract information from raw text (emails) by applying R, friendly regular expressions {rex} and tidy concepts</title>
       <link>/unknown/post/2019-08-25_rex_r/</link>
       <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>

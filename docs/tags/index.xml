@@ -48,24 +48,6 @@
     </item>
     
     <item>
-      <title>bootstrap</title>
-      <link>/unknown/tags/bootstrap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/tags/bootstrap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>css</title>
-      <link>/unknown/tags/css/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>go</title>
       <link>/unknown/tags/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -84,56 +66,11 @@
     </item>
     
     <item>
-      <title>highlight-js</title>
-      <link>/unknown/tags/highlight-js/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/tags/highlight-js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>html</title>
-      <link>/unknown/tags/html/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>hugo</title>
       <link>/unknown/tags/hugo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/unknown/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>js</title>
-      <link>/unknown/tags/js/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/tags/js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>responsive</title>
-      <link>/unknown/tags/responsive/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/tags/responsive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>syntax-highlighting</title>
-      <link>/unknown/tags/syntax-highlighting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/tags/syntax-highlighting/</guid>
       <description></description>
     </item>
     

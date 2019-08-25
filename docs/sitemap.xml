@@ -7,18 +7,6 @@
   </url>
   
   <url>
-    <loc>/unknown/project/project2/</loc>
-  </url>
-  
-  <url>
-    <loc>/unknown/project/project3/</loc>
-  </url>
-  
-  <url>
-    <loc>/unknown/project/project4/</loc>
-  </url>
-  
-  <url>
     <loc>/unknown/</loc>
     <lastmod>2019-08-25T00:00:00+00:00</lastmod>
   </url>
@@ -64,15 +52,7 @@
   </url>
   
   <url>
-    <loc>/unknown/tags/bootstrap/</loc>
-  </url>
-  
-  <url>
     <loc>/unknown/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>/unknown/tags/css/</loc>
   </url>
   
   <url>
@@ -84,31 +64,11 @@
   </url>
   
   <url>
-    <loc>/unknown/tags/highlight-js/</loc>
-  </url>
-  
-  <url>
-    <loc>/unknown/tags/html/</loc>
-  </url>
-  
-  <url>
     <loc>/unknown/tags/hugo/</loc>
   </url>
   
   <url>
-    <loc>/unknown/tags/js/</loc>
-  </url>
-  
-  <url>
     <loc>/unknown/project/</loc>
-  </url>
-  
-  <url>
-    <loc>/unknown/tags/responsive/</loc>
-  </url>
-  
-  <url>
-    <loc>/unknown/tags/syntax-highlighting/</loc>
   </url>
   
 </urlset>
