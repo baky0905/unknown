@@ -1,7 +1,7 @@
 baseURL = "http://baky0905.github.io/unknown"
 publishDir = "docs"
 languageCode = "en-us"
-title = "Unknown"
+title = "Data Unknown"
 theme = "minimal"
 disqusShortname = "baky0905" # delete this to disable disqus comments
 googleAnalytics = ""
