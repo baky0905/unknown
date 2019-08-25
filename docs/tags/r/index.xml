@@ -17,7 +17,8 @@
       <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/unknown/post/2019-08-25_rex_r/</guid>
-      <description>Motivation Since my main focus here is to learn basics of friendly regular expressions {rex} and processing raw text from emails in a tidy fashion, I will completly neglect any available packages that deal with email data processing like for example REmail.
+      <description>Motivation
+Since my main focus here is to learn basics of friendly regular expressions {rex} and processing raw text from emails in a tidy fashion, I will completly neglect any available packages that deal with email data processing like for example REmail.
 Secondly, when I first opened the following tutorial where they introduced Python Regex for data scientists applied on the same dataset of Fraudulent Email Corpus from Kaggle, it was a bit intimidating on how much looping and control flowing, unfriendly regular expressions were happening within.</description>
     </item>
     
