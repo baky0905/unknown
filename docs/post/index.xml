@@ -1,70 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Minimal</title>
+    <title>Posts on Unknown</title>
     <link>/unknown/post/</link>
-    <description>Recent content in Posts on Minimal</description>
+    <description>Recent content in Posts on Unknown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 25 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/unknown/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/unknown/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>Extract information from raw text (emails) by applying R, friendly regular expressions {rex} and tidy concepts</title>
+      <link>/unknown/post/2019-08-25_rex_r/</link>
+      <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/unknown/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/unknown/post/2019-08-25_rex_r/</guid>
+      <description>Motivation Since my main focus here is to learn basics of friendly regular expressions {rex} and processing raw text from emails in a tidy fashion, I will completly neglect any available packages that deal with email data processing like for example REmail.
+Secondly, when I first opened the following tutorial where they introduced Python Regex for data scientists applied on the same dataset of Fraudulent Email Corpus from Kaggle, it was a bit intimidating on how much looping and control flowing, unfriendly regular expressions were happening within.</description>
     </item>
     
     <item>
-      <title>Creating a New Theme</title>
-      <link>/unknown/post/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>Prepare to be surprised! Visualizing public data from npd.no</title>
+      <link>/unknown/post/2018-10-12_prepare-to-be-surprised-visualizing-public-data-from-npd/</link>
+      <pubDate>Sun, 09 Dec 2018 15:13:42 +0000</pubDate>
       
-      <guid>/unknown/post/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>/unknown/post/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/post/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
-    </item>
-    
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>/unknown/post/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/post/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
-    </item>
-    
-    <item>
-      <title>Migrate from Jekyll</title>
-      <link>/unknown/post/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/unknown/post/migrate-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
-▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+      <guid>/unknown/post/2018-10-12_prepare-to-be-surprised-visualizing-public-data-from-npd/</guid>
+      <description>Experimenting with crosstalk, flexdashboard and many more&amp;hellip; Link to the web application
+“Visualization can surprise, but it doesn’t scale. Modeling scales well, but it can’t fundamentally surprise.” – Hadley Wickham.
+One of the most important phases in the Data Analysis process is data visualization. It is an inherently human activity which relies on our ability to comprehend visual information and make sense of patterns. However, there’s only so much we can spend in visualizing the data, and regardless how many hours we may decide to put into it, it is never going to be enough.</description>
     </item>
     
   </channel>

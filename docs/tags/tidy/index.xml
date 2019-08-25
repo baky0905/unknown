@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tidy on Unknown</title>
+    <link>/unknown/tags/tidy/</link>
+    <description>Recent content in tidy on Unknown</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/unknown/tags/tidy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Extract information from raw text (emails) by applying R, friendly regular expressions {rex} and tidy concepts</title>
+      <link>/unknown/post/2019-08-25_rex_r/</link>
+      <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/unknown/post/2019-08-25_rex_r/</guid>
+      <description>Motivation Since my main focus here is to learn basics of friendly regular expressions {rex} and processing raw text from emails in a tidy fashion, I will completly neglect any available packages that deal with email data processing like for example REmail.
+Secondly, when I first opened the following tutorial where they introduced Python Regex for data scientists applied on the same dataset of Fraudulent Email Corpus from Kaggle, it was a bit intimidating on how much looping and control flowing, unfriendly regular expressions were happening within.</description>
+    </item>
+    
+  </channel>
+</rss>

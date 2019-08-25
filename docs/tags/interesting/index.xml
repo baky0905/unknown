@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interesting on Unknown</title>
+    <link>/unknown/tags/interesting/</link>
+    <description>Recent content in interesting on Unknown</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Dec 2018 15:13:42 +0000</lastBuildDate>
+    
+	<atom:link href="/unknown/tags/interesting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prepare to be surprised! Visualizing public data from npd.no</title>
+      <link>/unknown/post/2018-10-12_prepare-to-be-surprised-visualizing-public-data-from-npd/</link>
+      <pubDate>Sun, 09 Dec 2018 15:13:42 +0000</pubDate>
+      
+      <guid>/unknown/post/2018-10-12_prepare-to-be-surprised-visualizing-public-data-from-npd/</guid>
+      <description>Experimenting with crosstalk, flexdashboard and many more&amp;hellip; Link to the web application
+“Visualization can surprise, but it doesn’t scale. Modeling scales well, but it can’t fundamentally surprise.” – Hadley Wickham.
+One of the most important phases in the Data Analysis process is data visualization. It is an inherently human activity which relies on our ability to comprehend visual information and make sense of patterns. However, there’s only so much we can spend in visualizing the data, and regardless how many hours we may decide to put into it, it is never going to be enough.</description>
+    </item>
+    
+  </channel>
+</rss>
