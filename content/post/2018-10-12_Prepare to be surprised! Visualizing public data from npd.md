@@ -8,7 +8,7 @@ comments: true
 ---
 ## Experimenting with crosstalk, flexdashboard and many more...
 
-**[Link to the web application](https://baky0905.github.io/unknown/static/html/2018-10-21-EDA-NPD.html)**
+**[Link to the web application](https://raw.githubusercontent.com/baky0905/unknown/master/static/html/2018-10-21-EDA-NPD.html)**
 
 “Visualization can surprise, but it doesn’t scale. Modeling scales well, but it can’t fundamentally surprise.” – Hadley Wickham.
 
