@@ -6,10 +6,20 @@
     <description>Recent content in R on Data Unknown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/unknown/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raster Time Series Animation</title>
+      <link>/unknown/post/raster-time-series-animation/</link>
+      <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/unknown/post/raster-time-series-animation/</guid>
+      <description>Downloading satelite imageryDownload the data from Sentinel Hub Playground.
+library(dplyr)library(lubridate)library(stringr)library(fs)library(purrr)library(glue)library(magick)Extract the dates from the filenamesdates &amp;lt;- tibble(file_paths = fs::dir_ls(&amp;quot;data/2019-12-13-raster-time-series-animation_data/vir/&amp;quot;, glob = &amp;quot;*.jpg&amp;quot;)) %&amp;gt;%mutate(dates = as_date(str_extract(string = file_paths, pattern = regex(&amp;quot; [0-9]+-[0-9]+-[0-9]+&amp;quot;))))dates## # A tibble: 5 x 2## file_paths dates ## &amp;lt;fs::path&amp;gt; &amp;lt;date&amp;gt; ## 1 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2015-07-28## 2 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2016-07-02## 3 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2017-07-02## 4 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2018-07-07## 5 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2019-07-17Make a gif out of the downloaded satelite imagery.</description>
+    </item>
     
     <item>
       <title>Extract information from raw text (emails) by applying R, friendly regular expressions {rex} and tidy concepts</title>

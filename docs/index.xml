@@ -6,7 +6,7 @@
     <description>Recent content on Data Unknown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/unknown/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,25 @@
       
       <guid>/unknown/project/project1/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Raster Time Series Animation</title>
+      <link>/unknown/post/raster-time-series-animation/</link>
+      <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/unknown/post/raster-time-series-animation/</guid>
+      <description>Downloading satelite imageryDownload the data from Sentinel Hub Playground.
+library(dplyr)library(lubridate)library(stringr)library(fs)library(purrr)library(glue)library(magick)Extract the dates from the filenamesdates &amp;lt;- tibble(file_paths = fs::dir_ls(&amp;quot;data/2019-12-13-raster-time-series-animation_data/vir/&amp;quot;, glob = &amp;quot;*.jpg&amp;quot;)) %&amp;gt;%mutate(dates = as_date(str_extract(string = file_paths, pattern = regex(&amp;quot; [0-9]+-[0-9]+-[0-9]+&amp;quot;))))dates## # A tibble: 5 x 2## file_paths dates ## &amp;lt;fs::path&amp;gt; &amp;lt;date&amp;gt; ## 1 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2015-07-28## 2 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2016-07-02## 3 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2017-07-02## 4 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2018-07-07## 5 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2019-07-17Make a gif out of the downloaded satelite imagery.</description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>/unknown/post/test/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/unknown/post/test/</guid>
+      <description>testlibrary(tidyverse)## -- Attaching packages -------------## v ggplot2 3.2.0 v purrr 0.3.2## v tibble 2.1.3 v dplyr 0.8.3## v tidyr 0.8.3 v stringr 1.4.0## v readr 1.3.1 v forcats 0.4.0## -- Conflicts ----------------------## x dplyr::filter() masks stats::filter()## x dplyr::lag() masks stats::lag()tibble::tibble(cars)## # A tibble: 50 x 1## cars$speed $dist## &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;## 1 4 2## 2 4 10## 3 7 4## 4 7 22## 5 8 16## 6 9 10## 7 10 18## 8 10 26## 9 10 34## 10 11 17## # .</description>
     </item>
     
     <item>

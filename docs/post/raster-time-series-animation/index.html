@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Raster Time Series Animation</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Oswald', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/unknown/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/R.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.57.2" />
+        
+
+        
+
+        
+        
+        <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+        
+    </head>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Raster Time Series Animation</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/unknown/">Home</a></li>
+                            
+                                <li><a href="/unknown/post/">Posts</a></li>
+                            
+                                <li><a href="/unknown/project/">Projects</a></li>
+                            
+                                <li><a href="/unknown/resume/cv.pdf">Resume</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:kbakaric1@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/baky0905/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/kbakaric1"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/kristijanb/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/unknown/post/raster-time-series-animation/">Raster Time Series Animation</a></h4>
+    <h5>December 13, 2019</h5>
+    
+    <a href="/unknowntags/r"><kbd class="item-tag">R</kbd></a>
+    
+    <a href="/unknowntags/raster"><kbd class="item-tag">raster</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+
+<div id="downloading-satelite-imagery" class="section level1">
+<h1>Downloading satelite imagery</h1>
+<p>Download the data from <a href="https://apps.sentinel-hub.com/sentinel-playground/">Sentinel Hub Playground</a>.</p>
+<pre class="r"><code>library(dplyr)
+library(lubridate)
+library(stringr)
+library(fs)
+library(purrr)
+library(glue)
+library(magick)</code></pre>
+</div>
+<div id="extract-the-dates-from-the-filenames" class="section level1">
+<h1>Extract the dates from the filenames</h1>
+<pre class="r"><code>dates &lt;- tibble(file_paths = fs::dir_ls(&quot;data/2019-12-13-raster-time-series-animation_data/vir/&quot;, glob = &quot;*.jpg&quot;)) %&gt;%
+  mutate(dates = as_date(str_extract(string = file_paths, pattern = regex(&quot; [0-9]+-[0-9]+-[0-9]+&quot;))))
+dates</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   file_paths                                                          dates     
+##   &lt;fs::path&gt;                                                          &lt;date&gt;    
+## 1 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2015-07-28
+## 2 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2016-07-02
+## 3 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2017-07-02
+## 4 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2018-07-07
+## 5 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2019-07-17</code></pre>
+</div>
+<div id="make-a-gif-out-of-the-downloaded-satelite-imagery." class="section level1">
+<h1>Make a gif out of the downloaded satelite imagery.</h1>
+<p>Import the files and create a gif utilizing “magick” for image processing.</p>
+<p>Steps:</p>
+<ul>
+<li>List of filenames with <code>dir_ls</code></li>
+<li>Read the images with <code>image_read</code> and join them <code>image_join</code></li>
+<li>name the gif by using <code>glue</code> and dates$dates vector</li>
+<li>last step animate the gif at a frame rate of 0.5.</li>
+</ul>
+<pre class="r"><code>vir_gif &lt;- dir_ls(&quot;data/2019-12-13-raster-time-series-animation_data/vir/&quot;, glob = &quot;*.jpg&quot;) %&gt;% 
+    map(image_read) %&gt;% 
+    image_join() %&gt;% 
+    image_annotate(glue(&quot;Island of Vir:  {dates$dates}&quot;), location = &quot;+10+10&quot;, size = 20, color = &quot;white&quot;) %&gt;%
+    image_animate(fps=0.5) %&gt;% 
+    image_write(&quot;data/2019-12-13-raster-time-series-animation_data/outputs/vir2015_2019.gif&quot;) </code></pre>
+<div id="vir-croatia" class="section level2">
+<h2>Vir Croatia</h2>
+<pre class="r"><code>image_read(path = vir_gif)</code></pre>
+<p><img src="/unknownpost/2019-12-13-raster-time-series-animation_files/figure-html/unnamed-chunk-4-1.gif" /><!-- --></p>
+</div>
+<div id="fornebu-norway" class="section level2">
+<h2>Fornebu, Norway</h2>
+<pre class="r"><code>image_read(path = fornebu_gif)</code></pre>
+<p><img src="/unknownpost/2019-12-13-raster-time-series-animation_files/figure-html/unnamed-chunk-6-1.gif" /><!-- --></p>
+</div>
+</div>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/unknown/post/2019-08-25_rex_r/">Extract information from raw text (emails) by applying R, friendly regular expressions {rex} and tidy concepts</a></h4>
+    <h5>August 25, 2019</h5>
+    
+    <a href="/unknowntags/r"><kbd class="item-tag">R</kbd></a>
+    
+    <a href="/unknowntags/rex"><kbd class="item-tag">rex</kbd></a>
+    
+    <a href="/unknowntags/tidy"><kbd class="item-tag">tidy</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "baky0905" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+
