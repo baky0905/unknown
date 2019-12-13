@@ -1,0 +1,19 @@
+---
+title: test
+author: Kristijan Bakaric
+date: '2019-08-27'
+slug: test
+categories: []
+tags: []
+---
+
+## test
+
+```{r}
+library(tidyverse)
+tibble::tibble(cars)
+
+cars %>% 
+  select(speed)
+```
+

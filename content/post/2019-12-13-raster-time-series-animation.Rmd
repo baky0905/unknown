@@ -1,0 +1,82 @@
+---
+title: Raster Time Series Animation
+author: Kristijan Bakaric
+date: '2019-12-13'
+slug: raster-time-series-animation
+categories: []
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+tags:
+  - R
+  - raster
+---
+
+
+# Downloading satelite imagery
+
+Download the data from [Sentinel Hub Playground](https://apps.sentinel-hub.com/sentinel-playground/).
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(lubridate)
+library(stringr)
+library(fs)
+library(purrr)
+library(glue)
+library(magick)
+```
+
+# Extract the dates from the filenames
+
+```{r message=FALSE, warning=FALSE}
+dates <- tibble(file_paths = fs::dir_ls("data/2019-12-13-raster-time-series-animation_data/vir/", glob = "*.jpg")) %>%
+  mutate(dates = as_date(str_extract(string = file_paths, pattern = regex(" [0-9]+-[0-9]+-[0-9]+"))))
+dates
+```
+
+# Make a gif out of the downloaded satelite imagery.
+
+Import the files and create a gif utilizing “magick” for image processing.
+
+Steps:
+
+- List of filenames with `dir_ls`
+- Read the images with `image_read` and  join them `image_join` 
+- name the gif by using `glue` and dates$dates vector
+- last step animate the gif at a frame rate of 0.5.
+
+```{r message=FALSE, warning=FALSE}
+vir_gif <- dir_ls("data/2019-12-13-raster-time-series-animation_data/vir/", glob = "*.jpg") %>% 
+    map(image_read) %>% 
+    image_join() %>% 
+    image_annotate(glue("Island of Vir:  {dates$dates}"), location = "+10+10", size = 20, color = "white") %>%
+    image_animate(fps=0.5) %>% 
+    image_write("data/2019-12-13-raster-time-series-animation_data/outputs/vir2015_2019.gif") 
+```
+##  Vir Croatia
+```{r}
+image_read(path = vir_gif)
+```
+
+
+
+
+## Fornebu, Norway
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+dates <- tibble(file_paths = fs::dir_ls("data/2019-12-13-raster-time-series-animation_data/fornebu/", glob = "*.jpg")) %>%
+  mutate(dates = as_date(str_extract(string = file_paths, pattern = regex(" [0-9]+-[0-9]+-[0-9]+"))))
+fornebu_gif <- dir_ls("data/2019-12-13-raster-time-series-animation_data/fornebu/", glob = "*.jpg") %>% 
+    map(image_read) %>% 
+    image_join() %>% 
+    image_annotate(glue("Fornebu, Norway:  {dates$dates}"), location = "+10+10", size = 20, color = "white") %>%
+    image_animate(fps=0.5) %>% 
+    image_write("data/2019-12-13-raster-time-series-animation_data/outputs/fornebu2015_2019.gif") 
+```
+
+```{r}
+image_read(path = fornebu_gif)
+```
+

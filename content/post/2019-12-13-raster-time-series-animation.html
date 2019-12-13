@@ -1,0 +1,69 @@
+---
+title: Raster Time Series Animation
+author: Kristijan Bakaric
+date: '2019-12-13'
+slug: raster-time-series-animation
+categories: []
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+tags:
+  - R
+  - raster
+---
+
+
+
+<div id="downloading-satelite-imagery" class="section level1">
+<h1>Downloading satelite imagery</h1>
+<p>Download the data from <a href="https://apps.sentinel-hub.com/sentinel-playground/">Sentinel Hub Playground</a>.</p>
+<pre class="r"><code>library(dplyr)
+library(lubridate)
+library(stringr)
+library(fs)
+library(purrr)
+library(glue)
+library(magick)</code></pre>
+</div>
+<div id="extract-the-dates-from-the-filenames" class="section level1">
+<h1>Extract the dates from the filenames</h1>
+<pre class="r"><code>dates &lt;- tibble(file_paths = fs::dir_ls(&quot;data/2019-12-13-raster-time-series-animation_data/vir/&quot;, glob = &quot;*.jpg&quot;)) %&gt;%
+  mutate(dates = as_date(str_extract(string = file_paths, pattern = regex(&quot; [0-9]+-[0-9]+-[0-9]+&quot;))))
+dates</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   file_paths                                                          dates     
+##   &lt;fs::path&gt;                                                          &lt;date&gt;    
+## 1 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2015-07-28
+## 2 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2016-07-02
+## 3 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2017-07-02
+## 4 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2018-07-07
+## 5 data/2019-12-13-raster-time-series-animation_data/vir/Sentinel-2 L~ 2019-07-17</code></pre>
+</div>
+<div id="make-a-gif-out-of-the-downloaded-satelite-imagery." class="section level1">
+<h1>Make a gif out of the downloaded satelite imagery.</h1>
+<p>Import the files and create a gif utilizing “magick” for image processing.</p>
+<p>Steps:</p>
+<ul>
+<li>List of filenames with <code>dir_ls</code></li>
+<li>Read the images with <code>image_read</code> and join them <code>image_join</code></li>
+<li>name the gif by using <code>glue</code> and dates$dates vector</li>
+<li>last step animate the gif at a frame rate of 0.5.</li>
+</ul>
+<pre class="r"><code>vir_gif &lt;- dir_ls(&quot;data/2019-12-13-raster-time-series-animation_data/vir/&quot;, glob = &quot;*.jpg&quot;) %&gt;% 
+    map(image_read) %&gt;% 
+    image_join() %&gt;% 
+    image_annotate(glue(&quot;Island of Vir:  {dates$dates}&quot;), location = &quot;+10+10&quot;, size = 20, color = &quot;white&quot;) %&gt;%
+    image_animate(fps=0.5) %&gt;% 
+    image_write(&quot;data/2019-12-13-raster-time-series-animation_data/outputs/vir2015_2019.gif&quot;) </code></pre>
+<div id="vir-croatia" class="section level2">
+<h2>Vir Croatia</h2>
+<pre class="r"><code>image_read(path = vir_gif)</code></pre>
+<p><img src="/unknownpost/2019-12-13-raster-time-series-animation_files/figure-html/unnamed-chunk-4-1.gif" /><!-- --></p>
+</div>
+<div id="fornebu-norway" class="section level2">
+<h2>Fornebu, Norway</h2>
+<pre class="r"><code>image_read(path = fornebu_gif)</code></pre>
+<p><img src="/unknownpost/2019-12-13-raster-time-series-animation_files/figure-html/unnamed-chunk-6-1.gif" /><!-- --></p>
+</div>
+</div>

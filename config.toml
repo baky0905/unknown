@@ -17,8 +17,9 @@ enableEmoji = true
     backgroundColor = "white"
     font = "Oswald" # should match the name on Google Fonts!
     highlight = true
-    highlightStyle = "polarized-dark"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+    highlightStyle = "darcula"
+    highlightLanguages = ["R"]
+
 
 [[menu.main]]
     url = "/"
@@ -34,6 +35,12 @@ enableEmoji = true
     url = "/project/"
     name = "Projects"
     weight = 3
+    
+[[menu.main]]
+    url = "/resume/CV.pdf"
+    name = "Resume"
+    weight = 4  
+
 
 # Social icons to be shown on the right-hand side of the navigation bar
 # The "name" field should match the name of the icon to be used
