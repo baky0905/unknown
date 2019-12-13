@@ -56,11 +56,8 @@ vir_gif <- dir_ls("data/2019-12-13-raster-time-series-animation_data/vir/", glob
     image_write("data/2019-12-13-raster-time-series-animation_data/outputs/vir2015_2019.gif") 
 ```
 ##  Vir Croatia
-```{r}
-image_read(path = vir_gif)
-```
 
-
+![](data/2019-12-13-raster-time-series-animation_data/outputs/vir2015_2019.gif)
 
 
 ## Fornebu, Norway
@@ -76,7 +73,6 @@ fornebu_gif <- dir_ls("data/2019-12-13-raster-time-series-animation_data/fornebu
     image_write("data/2019-12-13-raster-time-series-animation_data/outputs/fornebu2015_2019.gif") 
 ```
 
-```{r}
-image_read(path = fornebu_gif)
-```
+![](data/2019-12-13-raster-time-series-animation_data/outputs/fornebu2015_2019.gif)
+
 
